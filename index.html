@@ -85,8 +85,9 @@ h4{font-size:16.5px;font-weight:600;margin:0;line-height:1.4}
 .profiles{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
 .chip{font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--blue);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none}
 .chip:hover{border-color:var(--blue)}
-.cvlink{margin-left:auto;font-size:14px;font-weight:500;text-decoration:none}
-.cvlink:hover{text-decoration:underline}
+.doclink{margin:0}
+.doclink a{display:inline-flex;align-items:center;gap:6px;font:600 14.5px/1 var(--f-body);color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);border-radius:999px;padding:10px 18px}
+.doclink a:hover{background:var(--blue-soft)}
 .ph{font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--muted);border:1px dashed var(--orange);border-radius:999px;padding:4px 10px}
 
 .bio{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start}
@@ -115,9 +116,10 @@ dl{margin:0}
 .cite .when{font-family:var(--f-mono);font-size:12.5px;color:var(--blue);padding-top:2px;font-variant-numeric:tabular-nums}
 .cite p{padding-left:1.5em;text-indent:-1.5em;max-width:82ch;font-size:15.5px;overflow-wrap:anywhere}
 .cite strong{font-weight:600}
+.cite .status{display:block;width:max-content;margin-top:6px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;line-height:1.5;padding:1px 7px;border-radius:4px;background:var(--blue-soft);color:var(--blue)}
 
 /* Interests */
-.interests{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.interests{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
 .interests li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:10px}
 .interests .n{font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1;color:var(--orange)}
 .interests span:last-child{font-weight:500;font-size:16px;line-height:1.4}
@@ -151,12 +153,14 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
   .portrait{width:min(260px,72%)}
   .bio{grid-template-columns:minmax(0,1fr);gap:28px}
   .contact{grid-template-columns:minmax(0,1fr)}
+  .interests{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sub{scroll-margin-top:130px}
 }
 @media (max-width:560px){
   .panel{padding-block:32px 56px;gap:44px}
   .entry,.cite{grid-template-columns:minmax(0,1fr);gap:2px}
   .entry .when{text-align:left;order:-1}
+  .cite .status{display:inline-block;margin:0 0 0 8px}
   .honor{grid-template-columns:minmax(0,1fr) auto}
   .honor .when{grid-column:1/-1}
   .bio .prose{font-size:17px}
@@ -195,7 +199,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
         <button class="btn ghost" type="button" data-jump="cv">CV</button>
         <button class="btn ghost" type="button" data-jump="contact">Contact</button>
       </div>
-      <div class="profiles"><a class="chip" href="https://drive.google.com/file/d/1EJhmD2_4bmngpxywq0eZHGAQotbK5lrd/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a><a class="chip" href="https://scholar.google.com/citations?user=xzcBj1gAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a><a class="chip" href="https://orcid.org/0009-0007-6850-2188" target="_blank" rel="noopener">ORCID</a><a class="chip" href="https://www.linkedin.com/in/hyuncheol-yoon-4a052a198/" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="profiles"><a class="chip" href="https://drive.google.com/file/d/1nXUDZZD6oJ8x4Ch5MrK3GfmdkWzaGeLZ/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a><a class="chip" href="https://scholar.google.com/citations?user=xzcBj1gAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a><a class="chip" href="https://www.researchgate.net/profile/Hyuncheol-Yoon" target="_blank" rel="noopener">ResearchGate</a><a class="chip" href="https://orcid.org/0009-0007-6850-2188" target="_blank" rel="noopener">ORCID</a><a class="chip" href="https://www.linkedin.com/in/hyuncheol-yoon-4a052a198/" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </div>
 
@@ -215,7 +219,8 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
   </div>
 
   <div class="sub" id="cv">
-    <div class="sub-title"><h3>Curriculum Vitae</h3><a class="cvlink" href="https://drive.google.com/file/d/1EJhmD2_4bmngpxywq0eZHGAQotbK5lrd/view?usp=sharing" target="_blank" rel="noopener">View full CV (PDF) ↗</a></div>
+    <div class="sub-title"><h3>Curriculum Vitae</h3></div>
+    <p class="doclink"><a href="https://drive.google.com/file/d/1nXUDZZD6oJ8x4Ch5MrK3GfmdkWzaGeLZ/view?usp=sharing" target="_blank" rel="noopener">View full CV (PDF) ↗</a></p>
 
     <div class="group">
       <p class="group-label">Education</p>
@@ -240,7 +245,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
     <div class="group">
       <p class="group-label">Skills</p>
       <div class="list">
-        <div class="entry"><h4>Statistical software</h4><span class="when">SPSS · AMOS · R</span></div>
+        <div class="entry"><h4>Statistical software</h4><span class="when">SPSS · R</span></div>
         <div class="entry"><h4>Languages</h4><span class="when">Korean (native) · English (fluent)</span></div>
       </div>
     </div>
@@ -276,7 +281,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
       <li><span class="n">02</span><span>Evidence-based interventions for school counseling</span></li>
       <li><span class="n">03</span><span>Promoting youth mental health and preventing mental health problems</span></li>
       <li><span class="n">04</span><span>Technology in counseling and counselor education</span></li>
-      <li><span class="n">05</span><span>School–family–community–university partnerships</span></li>
+      <li><span class="n">05</span><span>School–family–community partnerships</span></li>
     </ul>
   </div>
 
@@ -285,7 +290,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
     <div class="group">
       <p class="group-label">Peer-reviewed articles</p>
       <div class="cites">
-        <div class="cite"><span class="when">2026</span><p>Song, J., <strong>Yoon, H.</strong>, Woo, M., et al. (2026). The impact of adverse childhood experiences on youth’s mental health: What is the role of family resilience? <em>Journal of Child &amp; Adolescent Trauma</em>. <a href="https://doi.org/10.1007/s40653-026-00966-4" target="_blank" rel="noopener">https://doi.org/10.1007/s40653-026-00966-4</a></p></div>
+        <div class="cite"><span class="when">2026</span><p>Song, J., <strong>Yoon, H.</strong>, Woo, M., &amp; Kim, I. (2026). The impact of adverse childhood experiences on youth’s mental health: What is the role of family resilience? <em>Journal of Child &amp; Adolescent Trauma</em>. <a href="https://doi.org/10.1007/s40653-026-00966-4" target="_blank" rel="noopener">https://doi.org/10.1007/s40653-026-00966-4</a></p></div>
         <div class="cite"><span class="when">2026</span><p>Mariani, M., Lomas, G., Berger, C., Butkus, S., &amp; <strong>Yoon, H.</strong> (2026). Reconsidering lockdown drills in K–12 schools: A scoping review of empirical evidence on implementation practices, trauma-informed considerations, and reported outcomes. <em>Social Sciences, 15</em>(7), 422. <a href="https://doi.org/10.3390/socsci15070422" target="_blank" rel="noopener">https://doi.org/10.3390/socsci15070422</a></p></div>
         <div class="cite"><span class="when">2025</span><p>Mariani, M., Peluso, P., Charles, N., Song, J., &amp; <strong>Yoon, H.</strong> (2025). Improving school counselor ratios: School counseling support for English learner students. <em>Professional School Counseling, 29</em>(1). <a href="https://doi.org/10.1177/2156759X251407645" target="_blank" rel="noopener">https://doi.org/10.1177/2156759X251407645</a></p></div>
       </div>
@@ -299,7 +304,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
     <div class="group">
       <p class="group-label">Manuscripts in preparation</p>
       <div class="cites">
-        <div class="cite"><span class="when">Draft</span><p>Griffith, C., Mariani, M., McMahon, G., <strong>Yoon, H.</strong>, &amp; Jun, E. (in preparation). Conducting comprehensive systematic reviews: Preparing counseling researchers for evolving expectations in evidence synthesis. Target journal: <em>Counseling Outcome Research and Evaluation</em>.</p></div>
+        <div class="cite"><span class="when">Draft</span><p>Griffith, C., Mariani, M., McMahon, G., <strong>Yoon, H.</strong>, &amp; Jun, E. (in preparation). Conducting comprehensive systematic reviews: Preparing counseling researchers for evolving expectations in evidence synthesis. Target journal: <em>Counseling Outcome Research and Evaluation</em> (CORE).</p></div>
       </div>
     </div>
   </div>
@@ -315,8 +320,8 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
     <div class="group">
       <p class="group-label">Refereed conference presentations</p>
       <div class="cites">
-        <div class="cite"><span class="when">2027 · Mar</span><p><strong>Yoon, H.</strong>, &amp; Jun, E. (2027, March). <em>Can AI-assisted documentation reduce school counselor burnout?</em> [Education session]. American Counseling Association Conference, Portland, OR. <span class="badge">Accepted</span></p></div>
-        <div class="cite"><span class="when">2027 · Mar</span><p><strong>Yoon, H.</strong> (2027, March). <em>School counselors’ role in the AI era: SEL and the hidden curriculum</em> [Poster presentation]. American Counseling Association Conference, Portland, OR. <span class="badge">Accepted</span></p></div>
+        <div class="cite"><span class="when">2027 · Mar<span class="status">Accepted</span></span><p><strong>Yoon, H.</strong>, &amp; Jun, E. (2027, March). <em>Can AI-assisted documentation reduce school counselor burnout?</em> [Education session]. American Counseling Association Conference, Portland, OR.</p></div>
+        <div class="cite"><span class="when">2027 · Mar<span class="status">Accepted</span></span><p><strong>Yoon, H.</strong> (2027, March). <em>School counselors’ role in the AI era: SEL and the hidden curriculum</em> [Poster presentation]. American Counseling Association Conference, Portland, OR.</p></div>
         <div class="cite"><span class="when">2026 · Nov</span><p>Griffith, C., Mariani, M., McMahon, G., Jun, E., <strong>Yoon, H.</strong>, &amp; Sui, X. (2026, November). <em>From clearinghouse to classroom: Integrating 25 years of school counseling intervention research</em> [Education session]. Southern Association for Counselor Education and Supervision Conference, Louisville, KY.</p></div>
         <div class="cite"><span class="when">2026 · Sep</span><p>Griffith, C., Mariani, M., McMahon, G., <strong>Yoon, H.</strong>, &amp; Hill, D. (2026, September). <em>Trends in school counseling intervention research: Findings from a 25-year systematic review</em> [Education session]. Association for Assessment and Research in Counseling Conference, Dallas, TX.</p></div>
         <div class="cite"><span class="when">2026 · Sep</span><p>Griffith, C., Mariani, M., McMahon, G., Jun, E., &amp; <strong>Yoon, H.</strong> (2026, September). <em>Beyond database searches: Comprehensive approaches to article collection in systematic reviews</em> [Education session]. Association for Assessment and Research in Counseling Conference, Dallas, TX.</p></div>
@@ -325,8 +330,8 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
         <div class="cite"><span class="when">2025 · Oct</span><p>Griffith, C., Mariani, M., McMahon, G., <strong>Yoon, H.</strong>, Jun, E., Sui, X., Lee, L., &amp; Lamoon, B. (2025, October). <em>20 years of intervention research in school counseling: Results from a systematic review</em> [Conference presentation]. Association for Counselor Education and Supervision Conference, Philadelphia, PA.</p></div>
         <div class="cite"><span class="when">2025 · Mar</span><p><strong>Yoon, H.</strong> (2025, March). <em>The relationship between teacher enthusiasm and students’ subjective well-being: The sequential mediation effect of students’ self-efficacy and educational goals</em> [Poster presentation]. American Counseling Association Conference, Orlando, FL.</p></div>
         <div class="cite"><span class="when">2025 · Mar</span><p><strong>Yoon, H.</strong> (2025, March). <em>The relationship between self-esteem and subjective well-being: The multiple mediation effect of perceived teacher enthusiasm and teacher acceptance</em> [Poster presentation]. American Counseling Association Conference, Orlando, FL.</p></div>
-        <div class="cite"><span class="when">2025 · Mar</span><p><strong>Yoon, H.</strong> (2025, March). <em>The relationship between teacher enthusiasm and students’ meaning in life: The sequential mediation effect of students’ self-efficacy and educational goals</em> [Poster presentation]. Korean Counseling Association International Chapter Conference, Orlando, FL.</p></div>
-        <div class="cite"><span class="when">2024 · Apr</span><p><strong>Yoon, H.</strong>, Shin, K., &amp; Smith-Adcock, S. (2024, April). <em>The relationship between bullying victimization and subjective well-being: Moderated mediating effect of educational goals and meaning in life</em> [Poster presentation]. Korean Counseling Association International Chapter Conference, New Orleans, LA.</p></div>
+        <div class="cite"><span class="when">2025 · Mar</span><p><strong>Yoon, H.</strong> (2025, March). <em>The relationship between teacher enthusiasm and students’ meaning in life: The sequential mediation effect of students’ self-efficacy and educational goals</em> [Poster presentation]. Korean Counseling Association International Chapter (KCA-IC) Conference, Orlando, FL.</p></div>
+        <div class="cite"><span class="when">2024 · Apr</span><p><strong>Yoon, H.</strong>, Shin, K., &amp; Smith-Adcock, S. (2024, April). <em>The relationship between bullying victimization and subjective well-being: Moderated mediating effect of educational goals and meaning in life</em> [Poster presentation]. Korean Counseling Association International Chapter (KCA-IC) Conference, New Orleans, LA.</p></div>
         <div class="cite"><span class="when">2024 · Mar</span><p><strong>Yoon, H.</strong> (2024, March). <em>The relationship between students’ self-efficacy and subjective well-being: Mediating effects of perceived teacher enthusiasm and acceptance</em> [Conference presentation]. University of Florida College of Education Symposium, Gainesville, FL.</p></div>
       </div>
     </div>
@@ -337,11 +342,11 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
     <div class="list">
       <div class="entry"><h4>Graduate Research Assistant</h4><span class="when">Aug 2026 – Present</span><p class="org">School of Human Development and Organizational Studies in Education, University of Florida · Supervisor: Dr. Yusen Zhai</p>
         <ul>
-          <li>Design and pilot survey instruments and data collection protocols for the CRISIS project, a study of AI-based simulation training for counselors-in-training</li>
-          <li>Conduct systematic literature searches and synthesize findings on AI role-play simulation and live supervision in counselor preparation</li>
-          <li>Collaborate with faculty and doctoral colleagues on study design, IRB preparation, data collection, and manuscript development</li>
-          <li>Propose new lines of inquiry on technology integration in counselor education and mental health</li>
-          <li>Maintain project documentation, reference libraries, and coding materials for reproducible research</li>
+          <li>Contribute to studies on AI in counseling and mental health: an AI-simulation training study for counselors-in-training (CRISIS), a Wizard-of-Oz study of real-time AI supervision, and a causal machine learning study of heterogeneous treatment effects on depression among older adults</li>
+          <li>Developed survey batteries for the CRISIS study, including item selection, source documentation, and revision across pilot rounds</li>
+          <li>Built a multi-domain feedback framework matrix and clinical guidance table that translate counseling supervision constructs into operational prompts for a real-time AI feedback system</li>
+          <li>Synthesized 20+ empirical studies on LLM-simulated clients, AI-generated feedback, and Wizard-of-Oz methodology into a structured literature review and coding matrix</li>
+          <li>Draft manuscripts and maintain participant tracking and compensation records across study waves</li>
         </ul></div>
       <div class="entry"><h4>HOPE Project</h4><span class="when">Aug 2026 – Present</span><p class="org">Gainesville High School &amp; University of Florida</p>
         <ul>
@@ -360,7 +365,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
       <div class="entry"><h4>Co-Researcher, Narrative Authoring and AI Study</h4><span class="when">Oct 2026 – Present</span><p class="org">College of Education &amp; Department of Person-Centered Computing, University of Florida · Faculty Collaborator: Dr. Sondra Smith-Adcock</p>
         <ul>
           <li>Serve as narrative counseling co-researcher on an interdisciplinary dissertation study of how an interactive narrative authoring tool helps college students reflect on and restructure stressful experiences</li>
-          <li>Generate and review the system’s narrative prompts using narrative therapy principles such as externalization, re-authoring, and alternative storylines</li>
+          <li>Authored the system prompt specification for the reflection questions participants receive, operationalizing six narrative therapy practices with clinical guardrails</li>
           <li>Work with human–computer interaction researchers to link counseling theory to tool design and to outcomes including personal agency, identity, and well-being</li>
         </ul></div>
     </div>
@@ -372,6 +377,7 @@ footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-
   <div class="panel-head">
     <p class="eyebrow">Teaching</p>
     <h2>Courses and guest lectures</h2>
+    <p class="doclink"><a href="https://drive.google.com/file/d/1juMMiUHcKrkCpIPYIpTCVhYndAEm3cgn/view?usp=sharing" target="_blank" rel="noopener">Teaching Statement (PDF) ↗</a></p>
   </div>
       <div class="list">
     <div class="entry"><h4>Guest Lecturer, MHS 3930: Mindful Living</h4><span class="when">Fall 2026 – Present</span><p class="org">School of Human Development and Organizational Studies in Education, University of Florida</p>
